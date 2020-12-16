@@ -1,31 +1,27 @@
 
+//email ammesse per giocare
+var emailAmmesse = ['pippo@mail.com' , 'coffee@mail.com' , 'tazza@mail.com' , 'mariorossi@mail.com'];
+
 
 //Messaggio di input email
 var inputMailElement = prompt('Digita la tua email per accedere al gioco!');
 
 
-//credenziale esatta per accesso gioco dadi
-var rightMailElement = 'mariorossi@mail.com';
-
-
-//email ammesse per giocare
-var emailAmmesse = ['pippo@mail.com' , 'coffee@mail.com' , 'tazza@mail.com' , 'mariorossi@mail.com']
-
 
 //controllo credenziale esatta che verrà stampata nel browser
-var credenzialeAmmessa = false;
+var credenziale = false;
 
 for (var i = 0; i <= emailAmmesse.length; i++) {
-  if (emailAmmesse[i] === rightMailElement) {
-    credenzialeAmmessa = true
-  };
-}
+  if (inputMailElement === emailAmmesse[i]) {
+    credenziale = true
+  }
+};
 
 
-if(credenzialeAmmessa = true) {document.getElementById('emailcorretta').innerText =  ('Email corretta!')}
+if(!credenziale) {document.getElementById('emailcorretta').innerText =  ('Email sbagliata!')}
 else {
-  document.getElementById('emailcorretta').innerText = ('Email sbagliata!!!')
-}
+  document.getElementById('emailcorretta').innerText = ('Email corretta!')
+};
 
 
 // Una volta accertato che la credenziale sia esatta avvio il gioco dei dadi.
